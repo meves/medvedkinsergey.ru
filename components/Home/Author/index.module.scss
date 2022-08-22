@@ -1,0 +1,164 @@
+.author {
+    width: 340px;
+    margin: 0 auto;
+    background-color: var(--blue-color);
+    
+    .photo {
+        width: 320px;
+        height: 250px;
+        background-image: url('/images/author/Sergey_Medvedkin_639x490.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .info {
+        width: 320px;
+        padding: 34px 30px 30px;
+        background-color: var(--white-color);
+        
+        h1 {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 400;
+            font-size: 37px;
+            color: var(--light-black);
+        }
+        
+        h6 {
+            margin-top: 20px;
+            margin-bottom: 0;
+            font-family: 'PT Sans', sans-serif;
+            font-weight: 400;
+            font-size: 19px;
+            color: var(--blue-color);
+        }
+        
+        p {
+            margin-top: 20px;
+            margin-bottom: 24px;
+            font-weight: 400;
+            font-size: 12px;
+            color: var(--grey-color);
+        }
+        
+        .details {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-weight: 400;
+            font-size: 12px;
+            color: var(--light-black);    
+            margin-bottom: 12px;
+            
+            & > image {
+                display: block;
+                margin-right: 0.5em;
+            }
+            
+            .contacts {
+                font-weight: 600;
+                color: var(--blue-color);
+            }
+        }
+        
+        .details:not(:last-child) {
+            margin-bottom: 12px;
+        }
+        .details:not(:last-child) {
+            margin-bottom: 25px;
+        }   
+        
+    }
+    
+}
+
+
+/** 
+** * media-querries
+*/
+@media(min-width: 576px) {
+    .author {
+        width: 540px;
+        
+        .photo {
+            width: 520px;
+            height: 400px;
+        }
+        .info {
+            width: 520px;
+            padding: 32px 30px 30px;
+            
+            h1 {
+                font-size: 46px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .author {
+        display: flex;
+        width: 720px;
+        padding-right: 20px;
+        
+        .photo {
+            height: 600px;
+            flex: 1;        
+            background-image: url('/images/author/Sergey_Medvedkin_413x600.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        .info {
+            flex: 1;
+            padding: 22px 30px 7px;
+            
+            h1 {
+                font-size: 42px;
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .author {
+        width: 940px;
+        
+        .photo {
+            height: 640px;      
+            background-image: url('/images/author/Sergey_Medvedkin_560x780.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .info {
+            padding: 40px 30px 36px;
+            
+            h1 {
+                font-size: 52px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .author {
+        width: 1140px;
+        
+        .photo {
+            height: 780px;
+        }
+        .info {
+            padding: 90px 30px 86px;
+            
+            h1 {
+                font-size: 62px;
+            }
+        }
+    }
+}

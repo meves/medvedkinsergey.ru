@@ -1,0 +1,143 @@
+.concepts {
+    width: 340px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    background-color: var(--blue-color);
+    
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        font-size: 31px;
+        color: var(--light-black);
+    }
+    
+    p {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--light-black);
+    }
+    
+    .wrapper {
+        .conceptBlock {
+            width: 100%;
+            height: 180px;
+            padding: 20px 5px 25px;
+            background-color: var(--grey-medium);
+            
+            & > h4 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 400;
+                font-size: 19px;
+                color: var(--blue-color);
+            }
+            
+            & > .item {
+                font-weight: 400;
+                font-size: 14px;
+                margin-bottom: 5px;
+                color: var(--grey-color);
+            }
+        }
+        .conceptBlock:not(:last-child) {
+            margin-bottom: 15px;            
+        }
+    }
+}
+
+
+/**
+** * Media querries
+*/
+@media(min-width: 576px) {
+    .concepts {
+        width: 540px;
+        padding-top: 45px;
+        padding-bottom: 45px;
+        
+        h1 {
+            font-size: 46px;     
+            margin: 0 auto;        
+            text-align: center;
+        }
+        p {        
+            width: 80%;
+            margin: 20px auto 25px;        
+            text-align: center;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            
+            .conceptBlock {
+                flex-basis: 235px;
+            }
+            .conceptBlock:nth-child(2n) {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .concepts {
+        width: 720px;
+        padding-top: 50px;
+        padding-bottom: 65px;
+        
+        h1 {
+            font-size: 50px;
+        }
+        p {        
+            width: 60%;
+        }
+        .wrapper {
+            .conceptBlock {
+                flex-basis: 325px;
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .concepts {
+        width: 940px;
+        padding-top: 55px;
+        
+        p {
+            width: 50%;
+        }
+        .wrapper {
+            .conceptBlock {
+                flex-basis: 285px;
+            }
+            .conceptBlock:nth-child(4) {
+                margin-left: 0;
+            }
+            .conceptBlock:not(:nth-child(3n+1)) {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .concepts {
+        width: 1140px;
+        
+        p {
+            width: 40%;
+        }
+        .wrapper {
+            .conceptBlock {
+                flex-basis: 350px;
+            }
+        }
+    }
+}

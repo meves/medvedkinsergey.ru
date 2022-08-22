@@ -1,0 +1,140 @@
+.skills {
+    width: 340px;
+    margin: 0 auto;
+    padding: 35px 30px 50px;
+    background-color: var(--dark-blue);
+    
+    header {
+        padding: 20px 10px 20px 5px;
+        
+        h5 {
+            font-weight: 300;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--white-color);
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 400;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--white-color);
+        }
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;    
+            line-height: 1.5;
+        }
+    }
+    
+    
+    ul {
+        list-style-type: disc;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 20px 10px 0 5px;    
+        
+        &:last-child {
+            padding-top: 0;
+        }
+    }
+    
+    header p, ul li  {
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--grey-blue);
+        line-height: 1.6;
+    }
+}
+
+
+@media(min-width: 576px) {
+    .skills {
+        width: 540px;
+        padding-bottom: 60px;
+
+        header {
+            h5 {
+                margin-bottom: 15px;
+            }
+            h1 {
+                margin-bottom: 20px;
+                font-size: 46px;
+            }
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .skills {
+        width: 720px;
+        display: flex;
+        
+        header {
+            padding: 20px 25px;
+            flex-basis: 240px;
+            
+            h5 {
+                margin-bottom: 15px;
+            }
+        }
+        ul {
+            height: 340px;
+            padding: 20px 45px 0;
+            flex-basis: 240px;
+            
+            &:last-child {
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .skills {
+        width: 940px;
+        padding-bottom: 80px;
+        
+        header {
+            flex-basis: 313.334px;
+            
+            h1 {
+                margin-bottom: 25px;
+            }
+        }        
+        ul {
+            flex-basis: 313.334px;
+            padding-right: 65px;
+            padding-left: 65px;
+            height: 370px;
+        }
+        header p, ul li  {
+            font-size: 16px;
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .skills {
+        width: 1140px;
+        
+        header {
+            flex-basis: 380px;
+            padding-right: 70px;
+        }
+        ul {
+            height: 325px;
+            flex-basis: 380px;
+            padding-right: 90px;
+            padding-left: 90px;
+        }
+    }
+}

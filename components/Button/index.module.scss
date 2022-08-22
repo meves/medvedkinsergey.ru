@@ -1,0 +1,23 @@
+.button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--blue-color);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    
+    .download {
+        cursor: pointer;
+        
+        a {
+            display: block;
+            margin-left: 0.5em;
+        }
+    }
+
+}

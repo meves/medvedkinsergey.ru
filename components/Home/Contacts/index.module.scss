@@ -1,0 +1,211 @@
+.contacts {
+    width: 340px;
+    margin: 0 auto;
+    padding: 35px 30px 32px;
+    
+    .info {
+        padding: 0 11px 17px;
+        text-transform: uppercase;
+        
+        h6 {
+            margin: 0;
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--blue-color);
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        h2 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--blue-color);
+            font-family: 'Oswald', sans-serif;
+        }
+        .title {
+            margin: 8px 0 18px 0;
+        }
+        
+        .contactInfo {
+            margin-bottom: 20px;
+            color: var(--blue-color);
+            font-size: 15px;
+            text-transform: capitalize;
+            
+            p {
+                margin: 0;
+            }
+            p:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            p:last-child {
+                text-transform: lowercase;
+            }
+        }
+        
+        .socials {
+            width: 100px;
+            margin-top: 17px;
+            margin-bottom: 22px;
+        }
+        
+        .privacy {
+            margin: 0;
+            font-weight: 400;
+            font-size: 15px;
+            text-transform: lowercase;
+            color: var(--blue-color);
+        }
+    }
+    
+    
+    .form {
+        padding: 30px 12px; 
+        background-color: var(--beige-color);
+        
+        h1 {
+            margin: 0 0 17px 0;
+            font-weight: 400;
+            font-size: 28px;
+            color: var(--blue-color);
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        div {
+            input, textarea {
+                padding: 10px 5px;
+                font-size: 11px;
+                width: 100%;
+                margin-bottom: 18px;
+                border: none;
+            }
+            
+            button {
+                border: none;
+                padding: 15px 30px;
+                width: 100%;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                color: var(--white-color);
+                background-color: var(--blue-color);
+            }
+        }
+    }
+    
+}
+
+
+@media(min-width: 576px) {
+    .contacts {
+        width: 540px;
+        
+        .info {
+            padding: 16px 16px 30px;
+            
+            h2 {
+                font-size: 28px;
+            }
+            .title {
+                margin-top: 12px;
+                margin-bottom: 22px;
+            }
+            .socials {
+                margin-top: 15px;
+                margin-bottom: 17px;
+            }
+        }
+        .form {
+            padding: 18px 18px 20px;
+            
+            h1 {
+                font-size: 37px;
+            }
+            div {
+                input, textarea {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .contacts {
+        width: 720px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+        .info {
+            flex-basis: 297px;
+            padding-bottom: 18px;
+            
+            .socials {
+                margin-top: 18px;
+                margin-bottom: 24px;
+            }
+        }
+        .form {
+            flex-basis: 363px;
+            padding-top: 80px;
+            padding-bottom: 75px;
+            
+            div {
+                input, textarea {
+                    margin-bottom: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .contacts {
+        width: 940px;
+        
+        .info {
+            flex-basis: 396px;
+            
+            .contactInfo {
+                margin-bottom: 22px;
+            }
+            .socials {
+                margin-top: 17px;
+                margin-bottom: 22px;
+            }
+        }
+        .form {
+            flex-basis: 484px;
+            padding: 45px 30px;
+
+            div {
+                input, textarea {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .contacts {
+        width: 1140px;
+        
+        .info {
+            flex-basis: 486px;
+            padding-top: 55px;
+            padding-bottom: 52px;
+        }
+        .form {
+            flex-basis: 594px;
+            padding-top: 65px;
+            padding-bottom: 65px;
+
+            div {
+                input, textarea {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}

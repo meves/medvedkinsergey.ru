@@ -1,0 +1,18 @@
+html {
+    --beige-color: #e5e5e5;
+    
+    --grey-color: #808080;
+    --grey-blue: #858e99;
+    --grey-medium: #b9cbc9;
+    --dark-grey: #333;
+    
+    --blue-color: #4e5dab;
+    --blue-medium: #000d4b;
+    --dark-blue: #292d33;
+    
+    --white-color: #fff;  
+    --white-hover: rgba(255, 255, 255, 0.8);
+    --light-black: #111;
+    
+    --button-hover: #929FDF;
+}

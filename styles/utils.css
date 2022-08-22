@@ -1,0 +1,9 @@
+.container {
+    min-width: 340px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.closed {
+    display: none;
+}
