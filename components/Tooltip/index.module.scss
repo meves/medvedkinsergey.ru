@@ -1,0 +1,25 @@
+.tooltip {
+    position: absolute;   
+    position: relative;
+    padding: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: var(--white-color);
+    background-color: var(--blue-color);
+
+    .closeBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 3px;
+        right: 3px;
+        padding: 1px;
+        border: none;
+        color: var(--light-black);
+        background-color: var(--white-color);
+    }
+}

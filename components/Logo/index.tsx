@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const Logo = React.memo((
+export const Logo = (
     {fill} :
     {fill: string}
     ) => {
@@ -23,4 +21,4 @@ export const Logo = React.memo((
             </g>
         </svg>
     )
-})
+}

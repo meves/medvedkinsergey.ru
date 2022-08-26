@@ -25,6 +25,7 @@ export const Navbar: React.FC = () => {
             </div>
             <div className={styles.menu} title="menu" onClick={() => setOpen(prevOpen => !prevOpen)}>
                 <AppMenu  open={open}/>
+                {/*&#9776;*/}
             </div>
         </div>
     )

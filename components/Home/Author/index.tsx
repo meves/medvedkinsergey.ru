@@ -8,7 +8,7 @@ export const Author: React.FC = () => {
         <header className={styles.author}>
             <div className={styles.photo}/>
             <div className={styles.info}>
-                <h1>Hello, I'm Sergey.</h1>
+                <h1>Hello, I am Sergey.</h1>
                 <h6>Web Developer</h6>
                 <p>I am a web developer, make websites and web applications using React, Redux, Next 
                     and I also use Express and MySQL on server side.

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Layout } from "../../components/Layout";
 import { Date } from "../../components/Date";
-import { getAllPostIds, getPostData } from "../../utils/blog";
+import { getAllPostIds, getPostData } from "../../lib/utils/blog";
 import styles from './index.module.scss';
 
 

@@ -7,3 +7,20 @@
 .closed {
     display: none;
 }
+
+.error {
+    color: red;
+}
+
+.page404 {
+    padding: 2em 0;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.visibility {
+    visibility: hidden;
+}

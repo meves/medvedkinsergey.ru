@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Date } from "../../components/Date"
 import { Layout } from "../../components/Layout"
-import { getSortedPostsData } from "../../utils/blog"
+import { getSortedPostsData } from "../../lib/utils/blog"
 import styles from './index.module.scss'
 
 const BlogPage = ({

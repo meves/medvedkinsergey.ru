@@ -30,7 +30,7 @@ export const AppButton = (
             title="Download resume"
         >{label} 
             <div className={styles.download}>
-                <a><Image src={picture.image} width={picture.width} height={picture.height} /></a>
+                <a><Image src={picture.image} width={picture.width} height={picture.height} alt="download" /></a>
             </div>
         </button> 
     )

@@ -1,8 +1,18 @@
-import React from "react";
+import { createRef, useState } from "react";
 import { Socials } from "../../Socials";
+import { Tooltip } from "../../Tooltip";
+import { ContactsForm } from "./ContactsForm";
 import styles from './index.module.scss';
 
-export const Contacts: React.FC = () => {
+
+export const Contacts = () => {
+    const [tooltip, setTooltip] = useState('');
+    const tooltipRef = createRef<HTMLDivElement>()
+
+    const showTooltip = (message: string) => {
+        setTooltip(message)
+        tooltipRef.current?.classList.toggle(`visibility`)    }
+
     return (
         <section className={styles.contacts}>
             <div className={styles.info}>
@@ -22,21 +32,10 @@ export const Contacts: React.FC = () => {
                 </div>
                 <p className={styles.privacy}>&copy;2022 privacy policy</p>
             </div>
-            <form className={styles.form}>
-                <h1>Contact Me</h1>
-                <div>
-                    <input type="text" name="name" placeholder="Enter your Name" />
-                </div>
-                <div>
-                    <input type="text" name="address" placeholder="Enter a valid email address" />
-                </div>
-                <div>
-                    <textarea name="message" cols={30} rows={10} placeholder="Enter your message"></textarea>
-                </div>
-                <div>
-                    <button>Submit</button>
-                </div>
-            </form>
+            <div className={styles.formWrapper}>
+                <Tooltip ref={tooltipRef} tooltipText={tooltip} top="0px" right="0px"/>
+                <ContactsForm showTooltip={showTooltip} />
+            </div>
         </section>
     )
 }
