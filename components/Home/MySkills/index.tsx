@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { AppButton } from "../../Button";
+import { AppButton } from "../../widgets/Button";
 import styles from './index.module.scss';
 const list1 = [
     { id: 1, text: 'HTML / CSS' },

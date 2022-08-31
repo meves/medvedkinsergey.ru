@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { forwardRef } from 'react';
 import { v4 } from 'uuid';
 import styles from './AppMenu.module.scss';
 
@@ -14,10 +15,9 @@ const menuItems = [
     { id: 10, path: '/github', title: 'GitHub users'}
 ]
 
-
-export const AppMenu = ({open} : {open: boolean}) => {
+export const AppMenu = forwardRef<HTMLDivElement, {}>((props, ref) => {
     return (
-        <nav className={`${styles.appNav} ${!open ? 'closed' : ''}`}>
+        <nav ref={ref} className={`${styles.appNav} toggleMenu`}>
             <ul>
                 {menuItems.map(item => (
                     <li key={v4()}>
@@ -29,4 +29,8 @@ export const AppMenu = ({open} : {open: boolean}) => {
             </ul>
         </nav>
     )
+})
+
+AppMenu.defaultProps = {
+    
 }

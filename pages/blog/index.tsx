@@ -2,8 +2,8 @@ import { GetStaticProps, NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import { Date } from "../../components/Date"
-import { Layout } from "../../components/Layout"
+import { Date } from "../../components/widgets/Date"
+import { Layout } from "../../components/common/Layout"
 import { getSortedPostsData } from "../../lib/utils/blog"
 import styles from './index.module.scss'
 

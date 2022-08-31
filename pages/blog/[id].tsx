@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Link from "next/link";
 import Image from "next/image";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Layout } from "../../components/Layout";
-import { Date } from "../../components/Date";
+import { Layout } from "../../components/common/Layout";
+import { Date } from "../../components/widgets/Date";
 import { getAllPostIds, getPostData } from "../../lib/utils/blog";
 import styles from './index.module.scss';
 

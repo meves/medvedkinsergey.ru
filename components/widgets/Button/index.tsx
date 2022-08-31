@@ -1,6 +1,5 @@
-import { createReadStream } from "fs";
 import Image from "next/image";
-import React, { createRef, useCallback } from "react";
+import { useCallback } from "react";
 import styles from './index.module.scss';
 
 export const AppButton = (

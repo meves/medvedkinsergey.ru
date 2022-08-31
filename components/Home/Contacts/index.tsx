@@ -1,6 +1,6 @@
 import { createRef, useState } from "react";
-import { Socials } from "../../Socials";
-import { Tooltip } from "../../Tooltip";
+import { Socials } from "../../widgets/Socials";
+import { Tooltip } from "../../widgets/Tooltip";
 import { ContactsForm } from "./ContactsForm";
 import styles from './index.module.scss';
 
@@ -12,7 +12,6 @@ export const Contacts = () => {
     const showTooltip = (message: string) => {
         setTooltip(message)
         tooltipRef.current?.classList.toggle(`visibility`)    }
-
     return (
         <section className={styles.contacts}>
             <div className={styles.info}>

@@ -1,4 +1,7 @@
 .navbar {
+    position: sticky;
+    top: -20px;
+    z-index: 10;
     width: 340px;
     height: 79px;
     margin: 0 auto;
@@ -34,34 +37,14 @@
         height: 23px;
     }
     
-    .menu {
+    .burger {
         position: relative;
         margin-left: 30px;
-        width: 24px;
-        height: 5px;
-        background-color: var(--blue-medium);        
+        
         &:hover {
             cursor: pointer;
         }
-    }    
-    .menu::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: -8px;
-        width: 24px;
-        height: 5px;
-        background-color: var(--blue-medium);        
-    }    
-    .menu::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 8px;
-        width: 24px;
-        height: 5px;
-        background-color: var(--blue-medium);
-    }    
+    }  
 }
 
 
@@ -75,7 +58,7 @@
         .socials {
             margin-left: auto;
         }
-        .menu {
+        .burger {
             margin-right: 30px;
         }
     }

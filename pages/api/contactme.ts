@@ -1,10 +1,10 @@
 import { QueryError } from 'mysql2'
 import { NextApiResponse } from "next"
 import { createClientMessage } from "../../lib/db/client-message"
-import { ContactmeViewModel } from "../../types/models/ContactmeViewModel"
-import { CreateContactmeBodyModel } from "../../types/models/CreateContactmeBodyModel"
+import { ContactmeViewModel } from "../../lib/types/models/ContactmeViewModel"
+import { CreateContactmeBodyModel } from "../../lib/types/models/CreateContactmeBodyModel"
 import { body, validationResult} from 'express-validator'
-import { validateInputData } from '../../lib/utils/contactme'
+import { validateInputData } from '../../lib/utils/validator'
 
 export default async function apiContactmeHandler(
     req: CreateContactmeBodyModel, 

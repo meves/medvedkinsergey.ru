@@ -4,15 +4,15 @@
     margin: 0 auto;
 }
 
-.closed {
-    display: none;
+.toggleMenu {
+    visibility: hidden;
 }
 
 .error {
     color: red;
 }
 
-.page404 {
+.error_page {
     padding: 2em 0;
     height: 70vh;
     display: flex;

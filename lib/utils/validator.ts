@@ -1,4 +1,4 @@
-import { BodyType } from "../../types"
+import { BodyType } from "../types"
 import{ body } from 'express-validator'
 
 export const validateInputData = (body: BodyType) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './index.module.scss';
 import Image from "next/image";
-import { Socials } from "../../Socials";
+import { Socials } from "../../widgets/Socials";
 
 export const Profile: React.FC = () => {
     return (

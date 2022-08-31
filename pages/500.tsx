@@ -7,11 +7,13 @@ export default function NotFoundPage() {
         <div className="container">
             <Layout>
                 <Head>
-                    <title>404 Page not found</title>
+                    <title>
+                        500 Internal server error
+                    </title>
                 </Head>
                 <div className="error_page">
-                    <h1 className="error">The Page is not found</h1>
-                    <h2 className="error">Error 404</h2>
+                    <h1 className="error">Internal server error</h1>
+                    <h2 className="error">Error 500</h2>
                     <p>Please refer to 
                     <span>
                         <Link href="/">

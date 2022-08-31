@@ -1,7 +1,7 @@
 //import 'dotenv/config'
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { createUserMessage } from '../../../http/contactme'
-import { UserInput, UserMessage } from '../../../types'
+import { createUserMessage } from '../../../lib/http/contactme'
+import { UserInput, UserMessage } from '../../../lib/types'
 import styles from './index.module.scss'
 
 type Props = {
