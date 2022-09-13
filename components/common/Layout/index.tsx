@@ -6,10 +6,10 @@ import { Footer } from "../Footer"
 export const Layout = ({ children } : { children: ReactNode }) => {
     return (
         <>
-            <AppHead/>
-            <Navbar/>
-            { children }
-            <Footer/>
+        <AppHead/>
+        <Navbar/>
+        { children }
+        <Footer/>
         </>
     )
 }

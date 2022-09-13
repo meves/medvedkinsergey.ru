@@ -24,3 +24,9 @@
 .visibility {
     visibility: hidden;
 }
+
+.selected {
+    font-weight: 700;
+    color: var(--white-color);
+    background-color: var(--blue-color);
+}

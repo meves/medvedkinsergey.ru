@@ -1,10 +1,17 @@
 import Link from "next/link";
 import React, { createRef } from "react";
 import { Logo } from "../../widgets/Logo";
-import { AppMenu } from "./Menu/AppMenu";
+import { AppMenu } from "../Menu/AppMenu";
 import { Socials } from "../../widgets/Socials";
 import styles from './index.module.scss';
 import { Icons } from "../../widgets/Icons";
+
+const menuItems = [
+    { id: 1, path: '/', title: 'Home' }, 
+    { id: 2, path: '/blog', title: 'Blog'}, 
+    { id: 3, path: '/admin', title: 'Admin'}, 
+    
+]
 
 export const Navbar: React.FC = () => {
     const navRef = createRef<HTMLDivElement>() 
@@ -32,7 +39,7 @@ export const Navbar: React.FC = () => {
                 onClick={toggleMenu}
             >      
                 <Icons.Burger width="24" height="24" fill="#000d4b"/>
-                <AppMenu ref={navRef}/>
+                <AppMenu menuItems={menuItems} ref={navRef}/>
             </div>
         </div>
     )

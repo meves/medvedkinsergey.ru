@@ -1,17 +1,25 @@
-import { createRef, useState } from "react";
+import { createRef, useCallback, useEffect, useState } from "react";
 import { Socials } from "../../widgets/Socials";
 import { Tooltip } from "../../widgets/Tooltip";
 import { ContactsForm } from "./ContactsForm";
+import { selectContactMeMessage } from "../../../client/store/homePageSlice";
 import styles from './index.module.scss';
+import { useAppSelector } from "../../../client/store";
 
 
 export const Contacts = () => {
-    const [tooltip, setTooltip] = useState('');
+    const contactMeMessage = useAppSelector(selectContactMeMessage)
+
     const tooltipRef = createRef<HTMLDivElement>()
 
-    const showTooltip = (message: string) => {
-        setTooltip(message)
-        tooltipRef.current?.classList.toggle(`visibility`)    }
+    const showTooltip = useCallback(() => {
+        tooltipRef.current?.classList.toggle(`visibility`)    
+    }, [tooltipRef, tooltipRef.current])
+
+    useEffect(() => {
+        showTooltip()
+    }, [contactMeMessage])
+
     return (
         <section className={styles.contacts}>
             <div className={styles.info}>
@@ -32,8 +40,8 @@ export const Contacts = () => {
                 <p className={styles.privacy}>&copy;2022 privacy policy</p>
             </div>
             <div className={styles.formWrapper}>
-                <Tooltip ref={tooltipRef} tooltipText={tooltip} top="0px" right="0px"/>
-                <ContactsForm showTooltip={showTooltip} />
+                <Tooltip ref={tooltipRef} tooltipText={contactMeMessage} top="0px" right="0px"/>
+                <ContactsForm />
             </div>
         </section>
     )

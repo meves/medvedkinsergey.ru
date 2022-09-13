@@ -5,19 +5,16 @@ import { Contacts } from '../components/Home/Contacts'
 import { MySkills } from '../components/Home/MySkills'
 import { MyWorks } from '../components/Home/MyWorks'
 import { Profile } from '../components/Home/Profile'
-import { Layout } from '../components/common/Layout/index'
 
 const Index: NextPage = () => {
   return (
-    <div className="container">
-      <Layout>
+    <div className="container">      
         <Author/>
         <Concept/>
         <MyWorks/>
         <MySkills/>
         <Profile/>      
-        <Contacts/>
-      </Layout>
+        <Contacts/>      
     </div>
   )
 }

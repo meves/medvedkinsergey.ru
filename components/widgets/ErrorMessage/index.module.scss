@@ -1,0 +1,14 @@
+.tableHead {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    background-color: rgb(228, 209, 228);
+
+    .errorMessage {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: crimson;
+    }
+}

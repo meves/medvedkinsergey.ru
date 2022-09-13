@@ -1,15 +1,12 @@
-//import 'dotenv/config'
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { createUserMessage } from '../../../lib/http/contactme'
-import { UserInput, UserMessage } from '../../../lib/types'
+import { UserInput } from '../../../client/types'
+import { useAppDispatch } from '../../../client/store'
+import { sendUserMessage } from '../../../client/store/homePageSlice'
 import styles from './index.module.scss'
 
-type Props = {
-    showTooltip: (message: string) => void
-}
-
-export const ContactsForm = ({ showTooltip } : Props) => {
+export const ContactsForm = () => {
     const [userInput, setUserInput] = useState<UserInput>({username: '', email: '', message: ''})
+    const dispatch = useAppDispatch()
     
     const handleUserInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const name = event.currentTarget.name
@@ -19,16 +16,8 @@ export const ContactsForm = ({ showTooltip } : Props) => {
 
     const submitForm = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        setUserInput({username: '', email: '', message: ''})
-        const serverMessage: UserMessage | string | undefined = await createUserMessage(userInput)
-        if (typeof serverMessage === 'string' && serverMessage.length > 0) {
-            showTooltip(serverMessage)
-        } else {
-            const sm = serverMessage as UserMessage
-            const message = `${sm.username}, your message has been added.\n
-                You are getting the answer to your email ${sm.email} later`
-            showTooltip(message)
-        }
+        dispatch(sendUserMessage(userInput))
+        setUserInput({username: '', email: '', message: ''}) 
     }
 
     return (

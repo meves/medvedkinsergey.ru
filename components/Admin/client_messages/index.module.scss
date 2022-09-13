@@ -1,0 +1,55 @@
+.messages_page {
+
+    .filter {
+        display: flex;
+        margin-bottom: 2em;
+    }
+
+    .messages_block {
+
+
+        .table {
+            margin-top: 2em;
+            border-collapse:collapse;
+
+            thead {
+
+                tr {
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    color: var(--white-color);
+                    background-color: var(--blue-color);
+
+                    th {
+                        border: 1px solid var(--blue-medium);
+                        border-collapse: separate;
+                        text-align: center;
+                        padding: 0.5em;
+                    }
+                }
+            }
+
+            tbody {
+
+                tr {
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    color: var(--dark-blue);
+                    background-color: var(--white-color);
+                    
+                    td {
+                        border: 1px solid var(--blue-medium);
+                        border-collapse: separate;
+                        text-align: center;
+                        padding: 0.5em;
+
+                        input {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

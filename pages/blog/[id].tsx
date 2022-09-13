@@ -4,7 +4,7 @@ import Image from "next/image";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Layout } from "../../components/common/Layout";
 import { Date } from "../../components/widgets/Date";
-import { getAllPostIds, getPostData } from "../../lib/utils/blog";
+import { getAllPostIds, getPostData } from "../../lib/blog";
 import styles from './index.module.scss';
 
 
@@ -18,11 +18,11 @@ export default function Post({
     }
 }) {
     return (
+        <>
+        <Head>
+            <title>{ postData.title }</title>
+        </Head>
         <div className="container">
-            <Layout>
-                <Head>
-                    <title>{ postData.title }</title>
-                </Head>
                 <div className={styles.blogContainer}>
                     <article>
                         <h1 className={styles.headingXl}>{ postData.title }</h1>
@@ -54,8 +54,8 @@ export default function Post({
                         </Link>
                     </div>
                 </div>
-            </Layout>
         </div>
+        </>
     )
 }
 
