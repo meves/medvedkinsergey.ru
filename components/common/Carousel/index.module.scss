@@ -1,0 +1,32 @@
+.carouselWrapper {
+    width: 325px;
+    padding: 10px 25px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue-color);
+
+    button {
+        background-color: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--dark-blue);
+        transition: color 0.3s ease-in;
+
+        &:hover {
+            cursor: pointer;
+            color: var(--white-color);
+        }
+    }
+        
+    .carousel {        
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+        img:not(:first-child) {
+            margin-left: -275px;
+        }
+    }
+}

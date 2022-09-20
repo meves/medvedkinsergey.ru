@@ -5,6 +5,8 @@ import { AppMenu } from "../Menu/AppMenu";
 import { Socials } from "../../widgets/Socials";
 import styles from './index.module.scss';
 import { Icons } from "../../widgets/Icons";
+import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const menuItems = [
     { id: 1, path: '/', title: 'Home' }, 
@@ -14,9 +16,13 @@ const menuItems = [
 ]
 
 export const Navbar: React.FC = () => {
+    const router = useRouter()
+    const { data: session } = useSession()
+    console.log('session', session);
+
     const navRef = createRef<HTMLDivElement>() 
-    const toggleMenu = () => {
-        navRef.current?.classList.toggle('toggleMenu')
+    const toggleMenuVisibility = () => {
+        navRef.current?.classList.toggle('visibility')
     }
     return (
         <div className={styles.navbar}>
@@ -30,13 +36,21 @@ export const Navbar: React.FC = () => {
                     <a>Blog</a>
                 </Link>                    
             </nav>
+            <div>
+                {session ? (
+                    <button onClick={() => signOut()}>Sign out</button>
+                ) : (
+                    <button onClick={() => router.push('/api/auth/signin')}>Sign in</button>
+                )
+            }
+            </div>
             <div  className={styles.socials}> 
                 <Socials width="23" height="23" fill="#000d4b" />
             </div>      
             <div 
                 className={styles.burger} 
                 title="menu" 
-                onClick={toggleMenu}
+                onClick={toggleMenuVisibility}
             >      
                 <Icons.Burger width="24" height="24" fill="#000d4b"/>
                 <AppMenu menuItems={menuItems} ref={navRef}/>

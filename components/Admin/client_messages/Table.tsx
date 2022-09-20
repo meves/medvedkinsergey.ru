@@ -59,6 +59,7 @@ export const Table = (props: Props) => {
                         <td>{message.checked ? 'read' : 'unread'}</td>
                         <td>
                             <input 
+                                className="input-checkbox"
                                 type="checkbox" checked={message.checked}
                                 onChange={(event) => handleToggleChecked(event, message.id, message.checked)}
                             />

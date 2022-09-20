@@ -8,12 +8,12 @@ import styles from './index.module.scss';
 export const AppMenu = forwardRef<HTMLDivElement, {menuItems: MenuItem[]}>(({menuItems}, ref?) => {
     const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement>) => {
         const nav = event.currentTarget
-        nav.classList.toggle('toggleMenu')
+        nav.classList.toggle('visibility')
     }
     return (
         <nav 
             ref={ref} 
-            className={`${styles.appNav} toggleMenu`}
+            className={`${styles.appNav} visibility`}
             onMouseLeave={handleMouseLeave}
         >
             <ul>

@@ -14,5 +14,11 @@ html {
     --white-hover: rgba(255, 255, 255, 0.8);
     --light-black: #111;
     
+    --red-color: #ff0000;
+    --red-color-hover: hsla(0, 100%, 50%, 0.5);
+
+    --green-color: green;
+    --green-color-hover: rgba(0, 128, 0, 0.5);
+
     --button-hover: #929FDF;
 }

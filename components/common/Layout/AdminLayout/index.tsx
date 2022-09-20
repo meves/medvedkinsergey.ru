@@ -18,10 +18,11 @@ const menuItems = [
 
 export const AdminLayout = ({children}: {children: React.ReactNode}) => {
     return (
-        <div className="container">
+        <>
         <Head>
             <title>Admin panel</title>
         </Head>
+        <div className="container">
             <h1 className={styles.title}>Admin Panel</h1>
             <div className={styles.wrapper}>
                 <div className={styles.menu}>
@@ -32,5 +33,6 @@ export const AdminLayout = ({children}: {children: React.ReactNode}) => {
                 </div>
             </div>
         </div>
+        </>
     )
 }

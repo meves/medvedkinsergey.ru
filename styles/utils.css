@@ -1,17 +1,22 @@
+/*
+*** container for a page
+*/
 .container {
     min-width: 340px;
     max-width: 1140px;
     margin: 0 auto;
 }
 
-.toggleMenu {
-    visibility: hidden;
-}
-
+/*
+*** style for error message
+*/
 .error {
     color: red;
 }
 
+/*
+*** page representing error: 500, 404 etc
+*/
 .error_page {
     padding: 2em 0;
     height: 70vh;
@@ -25,8 +30,33 @@
     visibility: hidden;
 }
 
+/*
+*** selected element: painator page, button etc
+*/
 .selected {
     font-weight: 700;
     color: var(--white-color);
     background-color: var(--blue-color);
+}
+
+/*
+*** checkbox style
+*/
+.input-checkbox {
+    appearance: none;
+    height: 12px;
+    width: 12px;
+    background-color: var(--red-color);
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+.input-checkbox:hover {
+    background-color: var(--red-color-hover);
+}
+.input-checkbox:checked {
+    background-color: var(--green-color);
+}
+.input-checkbox:checked:hover {
+    background-color: var(--green-color-hover);
 }
