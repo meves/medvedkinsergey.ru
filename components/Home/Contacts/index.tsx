@@ -14,11 +14,11 @@ export const Contacts = () => {
 
     const showTooltip = useCallback(() => {
         tooltipRef.current?.classList.toggle(`visibility`)    
-    }, [tooltipRef, tooltipRef.current])
+    }, [tooltipRef])
 
     useEffect(() => {
         showTooltip()
-    }, [contactMeMessage])
+    }, [contactMeMessage, showTooltip])
 
     return (
         <section className={styles.contacts}>

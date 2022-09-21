@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { createRef } from "react";
+import React, { createRef, useEffect } from "react";
 import { Logo } from "../../widgets/Logo";
 import { AppMenu } from "../Menu/AppMenu";
 import { Socials } from "../../widgets/Socials";
@@ -7,6 +7,8 @@ import styles from './index.module.scss';
 import { Icons } from "../../widgets/Icons";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useAppDispatch, useAppSelector } from "../../../client/store";
+import { auth, selectSessionData } from "../../../client/store/authSlice";
 
 const menuItems = [
     { id: 1, path: '/', title: 'Home' }, 
@@ -17,9 +19,14 @@ const menuItems = [
 
 export const Navbar: React.FC = () => {
     const router = useRouter()
-    const { data: session } = useSession()
-    console.log('session', session);
-
+    const { data: session, status } = useSession()
+    const username = useAppSelector(selectSessionData)?.user?.name
+    const dispatch = useAppDispatch()
+    
+    useEffect(() => {
+        dispatch(auth(status, session))
+    }, [status, session, dispatch])
+    
     const navRef = createRef<HTMLDivElement>() 
     const toggleMenuVisibility = () => {
         navRef.current?.classList.toggle('visibility')
@@ -32,18 +39,10 @@ export const Navbar: React.FC = () => {
                 </Link>
             </div>
             <nav className={styles.blogMenu} title="My personal blog">
-                <Link href="/blog">
-                    <a>Blog</a>
-                </Link>                    
+                {router.asPath !== '/' ? 
+                    <Link href="/"><a>Home</a></Link> : 
+                    <Link href="/blog"><a>Blog</a></Link>}                    
             </nav>
-            <div>
-                {session ? (
-                    <button onClick={() => signOut()}>Sign out</button>
-                ) : (
-                    <button onClick={() => router.push('/api/auth/signin')}>Sign in</button>
-                )
-            }
-            </div>
             <div  className={styles.socials}> 
                 <Socials width="23" height="23" fill="#000d4b" />
             </div>      
@@ -54,6 +53,16 @@ export const Navbar: React.FC = () => {
             >      
                 <Icons.Burger width="24" height="24" fill="#000d4b"/>
                 <AppMenu menuItems={menuItems} ref={navRef}/>
+            </div>
+            <div className={styles.auth}>
+                {session ? (
+                    <span 
+                        style={{textTransform: 'uppercase'}}
+                        onClick={() => signOut()}>{username}</span>
+                ) : (
+                    <span onClick={() => router.push('/api/auth/signin')}>Sign in</span>
+                )
+            }
             </div>
         </div>
     )

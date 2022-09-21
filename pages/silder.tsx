@@ -1,4 +1,4 @@
-import { Carousel } from "../components/common/Carousel";
+import { Carousel } from "../components/widgets/Carousel";
 
 const Test = () => {
     return (

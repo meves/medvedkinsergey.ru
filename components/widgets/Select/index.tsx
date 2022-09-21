@@ -16,11 +16,12 @@ export const CountSelect = () => {
     for (let i = 1; i<= 10; i++) countValues.push(i)
     
     const dispatch = useAppDispatch()
+
     useEffect(() => {
         const requestedPage = Math.ceil((currentPage * pageSize) / selectedPageSize)
         writeUrl(String(requestedPage), String(selectedPageSize))
         dispatch(getClientMessages(requestedPage, selectedPageSize))
-    }, [selectedPageSize])
+    }, [selectedPageSize, currentPage, pageSize, dispatch])
 
     return (
         <>

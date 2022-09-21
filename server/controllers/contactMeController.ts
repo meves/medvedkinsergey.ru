@@ -1,7 +1,6 @@
-import { NextApiResponse } from "next";
 import { QueryError } from "mysql2";
 import { createClientMessageModel } from "../db/client-message";
-import { ContactMeBody, ContactMeView } from "../types/api/contactMe";
+import { ContactMeBody } from "../types/api/contactMe";
 import { contactMeBodyValidator } from "../validators/contactMe";
 import { ClientMessageModel } from "../types/models/ClientMessageModel";
 import { http_codes } from "../../lib/constants/http-codes";

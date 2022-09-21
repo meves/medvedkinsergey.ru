@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Link from "next/link";
 import Image from "next/image";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Layout } from "../../components/common/Layout";
 import { Date } from "../../components/widgets/Date";
 import { getAllPostIds, getPostData } from "../../lib/blog";
 import styles from './index.module.scss';
@@ -15,6 +14,7 @@ export default function Post({
         title: string
         date: string
         contentHtml: string
+        video: string
     }
 }) {
     return (
@@ -30,6 +30,7 @@ export default function Post({
                             <Date dateString={postData.date} />
                         </div>
                         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml}} />
+                        <div dangerouslySetInnerHTML={{__html: postData.video}}/>
                     </article>
                     <Link href="/blog">
                         <a>

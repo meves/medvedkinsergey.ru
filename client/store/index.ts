@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux'
 import homePageReducer from './homePageSlice'
 import adminPanelReducer from './adminPanelSlice'
+import authReducer from './authSlice'
 
 export const store = configureStore({
     reducer: {
         homePage: homePageReducer,
-        adminPanel: adminPanelReducer
+        adminPanel: adminPanelReducer,
+        auth: authReducer
     }
 })
 

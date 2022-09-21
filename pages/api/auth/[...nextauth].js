@@ -7,15 +7,21 @@ export const authOptions = {
         CredentialsProvider({
             name: 'credentials',
             credentials: {
-                username: { label: 'Email', type: 'email', placeholder: 'email@test.com' },
+                username: { label: 'Name', type: 'text', placeholder: 'Your name'},
+                email: { label: 'Email', type: 'email', placeholder: 'email@test.com' },
                 password: { label: 'Password', type: 'password' }
             },
             async authorize (credentials, req) {
                 // database lookup
-                if (credentials?.username === 'sergey@mail.ru' && credentials.password === 'test') {
+                // select record from db where emal = credentials?.email
+                // if there are not records return email or password is incorrect
+                // if record is, check password
+                // if password is incorrect return email or password is incorrect
+                // if password correct return { id, name, email }
+                if (credentials?.username === 'admin', credentials?.email === 'sergey@mail.ru' && credentials.password === 'test') {
                     return {
                         id: 2,
-                        name: 'Sergey',
+                        name: 'admin',
                         email: 'sergey@mail.ru'
                     }
                 }

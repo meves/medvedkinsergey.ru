@@ -35,10 +35,8 @@ const BlogPage = ({
                 <h1 className={styles.heading2Xl}>Sergey Medvedkin</h1>
                 <section className={styles.headingMd}>
                     <p>Hi there, I am Sergey Medvedkin</p>
-                    <p>
-                    (This is a sample website - you’ll be building a site like this on{' '}
-                    <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-                    </p>
+                    <p>This is my blog. Let&apos;s talk about technologies and tools of modern web development.</p>
+                    
                 </section>
                 <section className={`${styles.headingMd} ${styles.padding1px}`}>
                     <h2 className={styles.headingLg}>Blog</h2>

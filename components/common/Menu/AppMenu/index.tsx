@@ -4,12 +4,16 @@ import { v4 } from 'uuid';
 import { MenuItem } from '../../../../client/types';
 import styles from './index.module.scss';
 
+type Props = {
+    menuItems: MenuItem[]
+}
 
-export const AppMenu = forwardRef<HTMLDivElement, {menuItems: MenuItem[]}>(({menuItems}, ref?) => {
+export const AppMenu = forwardRef<HTMLDivElement, Props>( function AppMenuWithRef({menuItems}, ref?) {
     const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement>) => {
         const nav = event.currentTarget
         nav.classList.toggle('visibility')
     }
+
     return (
         <nav 
             ref={ref} 
@@ -27,4 +31,4 @@ export const AppMenu = forwardRef<HTMLDivElement, {menuItems: MenuItem[]}>(({men
             </ul>
         </nav>
     )
-})
+} )

@@ -17,15 +17,18 @@ export const Table = (props: Props) => {
     // global state
     let { currentPage, pageSize } = useAppSelector(selectPaginator)
     const clientMessages = useAppSelector(selectClientMessages)
+    
     // request to show messages
     const dispatch = useAppDispatch()
+
     useEffect(() => {
         // if query params are not defined in url then take them from redux store
         const queryPage = getQueryStringParamValue(asPath, 'page') ?? currentPage
         const queryCount = getQueryStringParamValue(asPath, 'count') ?? pageSize  
         writeUrl(String(queryPage), String(queryCount))
         dispatch(getClientMessages(queryPage, queryCount))
-    }, [])
+    }, [asPath, currentPage, pageSize, dispatch])
+
     // mark message read / unread
     const handleToggleChecked = async (event: ChangeEvent<HTMLInputElement>, messageId: number,checked: boolean) => {
         const checkbox = event.currentTarget
