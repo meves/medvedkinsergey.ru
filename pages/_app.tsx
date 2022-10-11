@@ -2,13 +2,16 @@ import type { AppProps } from 'next/app'
 import NextNProgress from "nextjs-progressbar"
 import { Provider } from 'react-redux'
 import { store } from '../client/store'
-import { Layout } from '../components/common/Layout'
+import { AppLayout } from '../components/common/Layout/AppLayout'
 import ErrorBoundary from '../components/shared/ErrorBoundary'
 import { SessionProvider } from 'next-auth/react'
 
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ 
+  Component, 
+  pageProps: { session, ...pageProps }
+}: AppProps) {
   
   return (
     <>
@@ -16,10 +19,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Provider store={store}>
         <ErrorBoundary>
-          <SessionProvider>
-            <Layout>
+          <SessionProvider session={session}>
+            <AppLayout>
               <Component {...pageProps} />
-            </Layout>
+            </AppLayout>
           </SessionProvider>
         </ErrorBoundary>
       </Provider>

@@ -5,7 +5,7 @@ import { AppMenu } from "../Menu/AppMenu";
 import { Socials } from "../../widgets/Socials";
 import styles from './index.module.scss';
 import { Icons } from "../../widgets/Icons";
-import { signOut, useSession } from "next-auth/react";
+import { signOut, signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "../../../client/store";
 import { auth, selectSessionData } from "../../../client/store/authSlice";
@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
                         style={{textTransform: 'uppercase'}}
                         onClick={() => signOut()}>{username}</span>
                 ) : (
-                    <span onClick={() => router.push('/api/auth/signin')}>Sign in</span>
+                    <span onClick={() => signIn()}>Sign in</span>
                 )
             }
             </div>
