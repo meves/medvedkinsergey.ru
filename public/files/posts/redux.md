@@ -4,7 +4,7 @@ date: '2022-08-04'
 video: ''
 ---
 
-Хотя ***React*** имеет возможности для работы с состоянием приложения, который называется _Context_, все же для проектов, имеющих достаточно интенсивный обмен данными с сервером, более предпочтительным является использование специальной _системы управления состоянием приложения_.    
-Для совместной работы  с ***React*** хорошо себя зарекомендовала система **Redux**. Это система управления состоянием, поддерживающая и развивающая так называемую концепцию **Flux** - _однонаправленный поток данных_, от источника данных к UI компоненту.   
-**Redux** использует централизованное хранилище, что облегчает задачу управления синхронизацией данных. Кроме того **Redux** использует _диспетчера_, _редьюсеры_, _промежуточное ПО_, _построители дествий_ и другие конструкты для реализации этой модели.
-В современном **Redux** рекомендуется использовать пакет ***Redux toolkit***. Этот пакет, упрощает установку, настройку и использование **Redux** в вашем приложении, а кроме того имеет встроенную подержку ***TypeScript***.
+Although ***React*** has the ability to work with the state of the application, which is called _Context_, nevertheless, for projects that have a fairly intensive communication with the server, it is more preferable to use a special _application state management system_.
+The **Redux** system has proven itself well for working with ***React***. It is a state management system that supports and develops the so-called **Flux** concept - _one-way data flow_, from the data source to the UI component.
+**Redux** uses a centralized store, which makes it easy to manage data synchronization. In addition, **Redux** uses _dispatchers_, _reducers_, _middleware_, _action builders_ and other constructs to implement this model.
+Modern **Redux** recommends using the ***Redux toolkit***. This package makes it easy to install, configure and use **Redux** in your application, plus it comes with built-in support for ***TypeScript***.

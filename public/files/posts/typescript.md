@@ -4,18 +4,18 @@ date: '2022-08-02'
 video: ''
 ---
 
-Писать приложения на **JavaScript** быстро и удобно, но только до определенного объема исохдного кода. **JavaScript** динамичен по своей природе и вы легко можете запутаться, добавив или удалив свойства в объект или из объекта, а затем забыть об этом и долго и напряженно искать, вызванную этой причиной ошибку. 
+Writing applications in **JavaScript** is fast and convenient, but only up to a certain amount of source code. **JavaScript** is dynamic in nature and you can easily get confused by adding or removing properties to or from an object and then forget about it and search long and hard for the error that caused it.
 
-Кроме того среды разработки не способны сделать полный анализ динамического кода и предложить вам инструменты автозаполнения и проверки правильности использования структур данных. 
+In addition, development environments are not able to do a full analysis of dynamic code and offer you tools for autocompletion and checking the correct use of data structures.
 
-Для решения подобных задач создан специальный язык, полностью совместимый с **JavaScript** и дополняющий его статическими проверками типов и такими возможностиями как:
- - _интерфейсы_
- - _статические поля классов_
- - _дженерики_ 
- и другие полезные возможности.
+To solve such problems, a special language has been created that is fully compatible with **JavaScript** and supplements it with static type checks and features such as:
+ - _interfaces_
+ - _static class fields_
+ - _generics_
+ and other useful features.
 
-Компилятор ***TypeScript*** производит проверки типов, затем траснформирует код, написанный на ***TypeScript*** в код **JavaScript**, того стандарта, котоый вы укажете в конфигурационном файле ***tsconfig.json***.
+The ***TypeScript*** compiler performs type checks, then transforms the code written in ***TypeScript*** into **JavaScript** code of the standard that you specify in the configuration file ***tsconfig.json** *.
 
-Если вы собираетесь писать приложение размеров от среднего и более, либо ваше приложение будет жить долго, то ваш очевидный выбор - ***TypeScript***.
+If you are going to be writing an application of medium size or larger, or if your application is going to live for a long time, then ***TypeScript*** is your obvious choice.
 
-TypeScript постоянно развивается, выходят новые релизы. Текущая версия **4.8**
+TypeScript is constantly evolving with new releases coming out. Current version **4.8**

@@ -4,12 +4,12 @@ date: '2022-08-01'
 video: ''
 ---
 
-Если вы собираетесь разрабатывать ваши приложения для веб, то вы ни за что не пройдете мимо языка программирования **JavaScript**. Начиня с 2015 года **JavaScript** получил второе дыхание. Его стандарт изменился значительно и, хотя движок по прежнему выпоняет старый добрый **JavaScript**, для написания исходного кода появилось много новых возможностей:
+If you are going to develop your applications for the web, then you will never pass by the **JavaScript** programming language. Since 2015, **JavaScript** has been given a second wind. Its standard has changed significantly, and while the engine still runs good old **JavaScript**, there are many new features for writing source code:
 
-- современный синтаксис классов
-- стрелочные функции
-- синтаксис Promise и async/await
+- modern class syntax
+- arrow functions
+- Promise and async/await syntax
 
-и многое другое. Кроме того движок **JavaScript** стало возможно использовать не только в браузере, но и на сервере (***Node.js***), на десктопе (***Electron***) и даже во встроенных системах (***Espruino***).
+and much more. In addition, the **JavaScript** engine has become possible to use not only in the browser, but also on the server (***Node.js***), on the desktop (***Electron***) and even in embedded systems (* **Espruino***).
 
-Таким образом, в настоящее время **JavaScript** это современный, универсальный язык программирования. Если вы еще раздумываете, стоит ли его изучать, не теряйте времени, тысячи людей уже используют **JavaScript** для решения задач.
+Thus, nowadays **JavaScript** is a modern, universal programming language. If you're still wondering if it's worth learning, don't waste your time, thousands of people are already using **JavaScript** to solve problems.

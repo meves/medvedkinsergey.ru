@@ -4,24 +4,24 @@ date: '2022-08-03'
 video: ''
 ---
 
-Построение пользовательских интерфейсов связано с переиспользованием кода. Вы постоянно создаете компоненты, которые используются ещё где-то:
-- кнопки
-- списки
-- меню
-- карточки товаров
-и так далее.
+Building user interfaces is about code reuse. You are constantly creating components that are used elsewhere:
+- buttons
+- lists
+- menu
+- product cards
+and so on.
 
-Веб стандарт предлагает для этих целей веб-компоненты. Но эта технология не до конца отработана. Более привлекательным является использование ***UI Framework*** или ***UI библиотеки***, такой как **React**. 
+The web standard provides web components for this purpose. But this technology is not fully developed. More attractive is to use ***UI Framework*** or ***UI library*** like **React**.
 
-**React** разрабатывается и поддерживается _Facebook_, библиотека хорошо себя зарекомендовала во многих крупных проектах:
+**React** is developed and maintained by _Facebook_, the library has proven itself well in many large projects:
 - _Instagram_
 - _Netflix_
 - _New York Times_
 - _Yahoo_
-- _WhatsApp_
+- _Whatsapp_
 - _Dropbox_
-и во многих других.
+and in many others.
 
-Главное преимущество **React** - производительность. Она достигается за счет специального упрощенного представления объектной модели документа - ***виртуального DOM***. В нем хранится текущее состояние ***DOM*** и отрисовка производится только при необходимости изменений.
+The main benefit of **React** is performance. It is achieved through a special simplified representation of the document object model - ***virtual DOM***. It stores the current state of ***DOM*** and only draws when changes are needed.
 
-**React** достаточно гибок и  предоставляет много других возможностей, одной из наиболее известных является утилита ***create react app***, которая собирает ваше стартовое приложение. Кроме того поддержка ***TypeScript*** добавлена в **React**. 
+**React** is quite flexible and provides many other features, one of the most famous is the ***create react app*** utility which builds your starter app. Additionally, ***TypeScript*** support has been added to **React**.

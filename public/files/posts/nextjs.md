@@ -4,18 +4,18 @@ date: '2022-08-05'
 video: ''
 ---
 
-При создании _веб сайтов, ориентированных на коммерческое использование_, важной является их способность анализироваться поисковыми движками типа ***Google***, ***Yandex*** и другими. Чтобы помочь разработчикам с этим был создан фреймворк **Nextjs**. Он имеет встроенные возможности для разработчика реализовать различные виды рендера:
+When creating _web sites targeted for commercial use_, it is important that they be analyzed by search engines like ***Google***, ***Yandex*** and others. The **Nextjs** framework was created to help developers with this. It has built-in features for the developer to implement different kinds of rendering:
 
-- генерация статических страниц на сервере во время сборки приложения
-- инкрементальная статическая генерация страниц во время сборки приложения
-- рендер страниц на сервере во время запроса
-- рендер дополнительного содержимого страницы на стороне клиента
+- generating static pages on the server during application build
+- incremental static page generation during application build
+- render pages on the server during the request
+- rendering additional page content on the client side
 
-Как видно из этого списка **Nextjs** покрывает все основные потребности рендера в современных веб сайтах и приложениях. 
-Кроме того, **Nextjs** предлагает дополнительные возможности, такие как:
-- маршрутизация на основе страниц
-- создание API
-- авторизация и аутентификация
- и многое другое.
+As you can see from this list, **Nextjs** covers all the basic rendering needs of modern websites and applications.
+In addition, **Nextjs** offers additional features such as:
+- page-based routing
+- API creation
+- authorization and authentication
+ and much more.
 
-Возможности **Nextjs** довольно обширны и описываются в документации по фреймворку.
+The possibilities of **Nextjs** are quite extensive and are described in the framework documentation.
