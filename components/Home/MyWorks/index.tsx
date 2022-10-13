@@ -18,7 +18,7 @@ export const MyWorks: React.FC = () => {
     return (
         <section className={styles.works}>
             <header className={styles.header}>
-                <h1>My Works 2</h1>
+                <h1>My Works</h1>
                 <p>There are some examples of my works. These are e-commerce sites,
                     realty agency site, landing page, React SPA: social network, 
                     github app and blog application on Next framework.  

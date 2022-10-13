@@ -17,12 +17,12 @@ export const Tooltip = forwardRef<HTMLDivElement, Props>( function TooltipWithRe
     }
 
     return (
-        <div 
+        <div
             ref={ref}
             className={`${styles.tooltip} visibility`}
             style={{top: `${top}`, right: `${right}`}}
         > 
-            {tooltipText}
+            { tooltipText }
             <button 
                 className={styles.closeBtn} 
                 onClick={handleButtonClick}>

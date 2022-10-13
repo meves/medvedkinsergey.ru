@@ -9,7 +9,7 @@ const nextConfig = {
     database: 'portfolio-site',
     user: 'root',
     password_production: 'Oedaim6vihee0Afo',
-    password_development: 'Hk_61-S*d+85',      
+    password_development: 'Hk_61-S*d+85',
   }
 }
 
