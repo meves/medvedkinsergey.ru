@@ -32,22 +32,16 @@ export default function Post({
                         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml}} />
                         <div dangerouslySetInnerHTML={{__html: postData.video}}/>
                     </article>
-                    <Link href="/blog">
-                        <a>
-                            <Image
-                                priority
-                                src="/images/author/Sergey_Medvedkin_230x230.jpg"
-                                className={styles.borderCircle}
-                                height={108}
-                                width={108}
-                                alt="Author Sergey Medvedkin"
-                            />
-                        </a>
-                    </Link>
-                    <h2 className={styles.headingLg}>
-                        <Link href="/">
-                            <a className={styles.colorInherit}>Sergey Medvedkin</a>
-                        </Link>
+                    <Image
+                        priority
+                        src="/images/author/Sergey_Medvedkin_230x230.jpg"
+                        className={styles.borderCircle}
+                        height={108}
+                        width={108}
+                        alt="Author Sergey Medvedkin"
+                    />
+                    <h2 className={`${styles.headingLg} ${styles.colorInherit}`}>
+                            Sergey Medvedkin
                     </h2>
                     <div className={styles.backToHome}>
                         <Link href="/blog">

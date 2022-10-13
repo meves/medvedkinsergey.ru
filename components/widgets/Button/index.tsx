@@ -6,18 +6,20 @@ export const AppButton = (
     { label, picture }: 
     { label: string,
         picture: {
-        image: any,
+        image: string,
         width: number,
         height: number
     }
     }) => {
     
     const downLoadFile = useCallback(async () => {
-        const filename = 'MedvedkinSergeyFrontendDeveloperCV.pdf';
-        const url = `http://localhost:3000/files/resume/${filename}`;
+        const filename = `/files/resume/MedvedkinSergeyFrontendDeveloperCV.pdf`;
+        const url = process.env.NODE_ENV === 'development' 
+            ? `${process.env.url_development}${filename}`
+            : `${process.env.url_production}${filename}`;
         const response = await fetch(url, { headers: {'Content-Type': 'application/pdf;charset=UTF-8'} });
         const blob = await response.blob();
-        const objectUrl = URL.createObjectURL(blob);    
+        const objectUrl = URL.createObjectURL(blob); 
         open(objectUrl);
         URL.revokeObjectURL(objectUrl);
     }, [])
@@ -27,7 +29,7 @@ export const AppButton = (
             className={styles.button}
             onClick={downLoadFile}
             title="Download resume"
-        >{label} 
+        >{ label } 
             <div className={styles.download}>
                 <a><Image src={picture.image} width={picture.width} height={picture.height} alt="download" /></a>
             </div>

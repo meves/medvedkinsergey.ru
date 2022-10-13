@@ -19,7 +19,7 @@ export const Tooltip = forwardRef<HTMLDivElement, Props>( function TooltipWithRe
     return (
         <div
             ref={ref}
-            className={`${styles.tooltip} visibility`}
+            className={`${styles.tooltip}` + ` visibility`}
             style={{top: `${top}`, right: `${right}`}}
         > 
             { tooltipText }

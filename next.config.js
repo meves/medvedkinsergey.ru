@@ -3,6 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
+    url_development: 'http://localhost:3000',
+    url_production: 'https://medvedkinsergey.ru:443',
     url_api_development: 'http://localhost:3000/api',
     url_api_production: 'https://medvedkinsergey.ru:443/api',
     host: 'localhost',
