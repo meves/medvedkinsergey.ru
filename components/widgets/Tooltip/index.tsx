@@ -1,4 +1,5 @@
 import { forwardRef, MouseEvent, memo } from 'react'
+import classNames from 'classnames'
 import styles from './index.module.scss'
 
 type Props = {
@@ -19,7 +20,7 @@ export const Tooltip = forwardRef<HTMLDivElement, Props>( function TooltipWithRe
     return (
         <div
             ref={ref}
-            className={`${styles.tooltip}` + ` visibility`}
+            className={classNames(styles.tooltip, 'visibility')}
             style={{top: `${top}`, right: `${right}`}}
         > 
             { tooltipText }

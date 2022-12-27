@@ -6,12 +6,12 @@ const worksDescriptions = [
     { id: 1, picture: 'blog-next.png', path: '/blog', title: 'E-commerce site', description: 'E-commerce solution of online store "Quantum".' },
     { id: 2, picture: 'game-poker-card.png', path: '/', title: 'Landing Page', description: 'Landing page for personal growth training courses' },
     { id: 3, picture: 'github.png', path: '/', title: 'E-commerce site', description: 'E-commerce solution of real estate agency' },
-    { id: 4, picture: 'social-network.png', path: '/', title: 'Next App Blog', description: 'Full-stack blog application on Next framework' },
-    { id: 5, picture: 'device-shop.png', path: '/', title: 'E-commerce site', description: 'E-commerce solution of home appliances online store' },
-    { id: 6, picture: 'internet-shop.png', path: '/', title: 'E-commerce site', description: "E-commerce solution of online children's goods store"},
-    { id: 7, picture: 'quantum-shop.png', path: '/', title: 'SPA Social Network', description: 'Example of developing part of a social network. React SPA' },
-    { id: 8, picture: 'realty.png', path: '/', title: 'SPA Card Game', description: 'Memory test computer game. React SPA' },
-    { id: 9, picture: 'teta-healing.png', path: '/', title: 'SPA Github Users', description: 'Github user search app using React. SPA' },
+    // { id: 4, picture: 'social-network.png', path: '/', title: 'Next App Blog', description: 'Full-stack blog application on Next framework' },
+    // { id: 5, picture: 'device-shop.png', path: '/', title: 'E-commerce site', description: 'E-commerce solution of home appliances online store' },
+    // { id: 6, picture: 'internet-shop.png', path: '/', title: 'E-commerce site', description: "E-commerce solution of online children's goods store"},
+    // { id: 7, picture: 'quantum-shop.png', path: '/', title: 'SPA Social Network', description: 'Example of developing part of a social network. React SPA' },
+    // { id: 8, picture: 'realty.png', path: '/', title: 'SPA Card Game', description: 'Memory test computer game. React SPA' },
+    // { id: 9, picture: 'teta-healing.png', path: '/', title: 'SPA Github Users', description: 'Github user search app using React. SPA' },
 ]
 
 export const MyWorks: React.FC = () => {

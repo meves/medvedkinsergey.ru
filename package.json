@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
+    "classnames": "^2.3.2",
     "date-fns": "^2.29.2",
     "gray-matter": "^4.0.3",
     "mysql2": "^2.3.3",
