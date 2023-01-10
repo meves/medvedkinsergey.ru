@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useCallback, useState } from 'react'
 import { UserInput } from '../../../client/types'
 import { useAppDispatch } from '../../../client/store'
 import { sendUserMessage } from '../../../client/store/homePageSlice'
@@ -8,17 +8,17 @@ export const ContactsForm = () => {
     const [userInput, setUserInput] = useState<UserInput>({username: '', email: '', message: ''})
     const dispatch = useAppDispatch()
     
-    const handleUserInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleUserInputChange = useCallback((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const name = event.currentTarget.name
         const value = event.currentTarget.value
         setUserInput(prev => ({...prev, [name]: value}))
-    }
+    }, [setUserInput])
 
-    const submitForm = async (event: FormEvent<HTMLFormElement>) => {
+    const submitForm = useCallback(async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         dispatch(sendUserMessage(userInput))
         setUserInput({username: '', email: '', message: ''}) 
-    }
+    }, [dispatch, userInput, setUserInput])
 
     return (
         <form className={styles.form} onSubmit={submitForm}>            

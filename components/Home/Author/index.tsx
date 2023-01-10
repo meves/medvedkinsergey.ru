@@ -1,7 +1,7 @@
 import React from "react";
-import styles from './index.module.scss';
 import Image from "next/image";
 import { AppButton } from "../../widgets/Button";
+import styles from './index.module.scss';
 
 export const Author: React.FC = () => {
     return (

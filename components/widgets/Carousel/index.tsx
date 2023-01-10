@@ -11,17 +11,15 @@ export const Carousel = ({count} : {count: number}) => {
     }
 
     const handleRightClick = () => {
-        current >= 1 && current < count ?
-            setCurrent((prevCurrent) => prevCurrent + 1) :
-            setCurrent(1)        
-        console.log(`click ${current}`);
-        
+        current >= 1 && current < count 
+            ? setCurrent((prevCurrent) => prevCurrent + 1) 
+            : setCurrent(1)        
     }
+
     const handleLeftClick = () => {
-        current <= count && current > 1 ?
-            setCurrent((prevCurrent) => prevCurrent - 1) :
-            setCurrent(count)
-        console.log(`click ${current}`);        
+        current <= count && current > 1
+            ? setCurrent((prevCurrent) => prevCurrent - 1)
+            : setCurrent(count)
     }
 
     return (

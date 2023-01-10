@@ -1,33 +1,20 @@
 import Image from "next/image";
-import { useCallback } from "react";
+import { downLoadFile } from "../../../lib/downLoadFile";
 import styles from './index.module.scss';
 
-export const AppButton = (
-    { label, picture }: 
-    { label: string,
-        picture: {
-        image: string,
-        width: number,
-        height: number
-    }
-    }) => {
-    
-    const downLoadFile = useCallback(async () => {
-        const filename = `/files/resume/MedvedkinSergeyFrontendDeveloperCV.pdf`;
-        const url = process.env.NODE_ENV === 'development' 
-            ? `${process.env.url_development}${filename}`
-            : `${process.env.url_production}${filename}`;
-        const response = await fetch(url, { headers: {'Content-Type': 'application/pdf;charset=UTF-8'} });
-        const blob = await response.blob();
-        const objectUrl = URL.createObjectURL(blob); 
-        open(objectUrl);
-        URL.revokeObjectURL(objectUrl);
-    }, [])
 
+type Picture = {
+    image: string,
+    width: number,
+    height: number
+}
+
+export const AppButton = ({label, picture } : {label: string, picture: Picture}) => {
+        
     return (
         <button
             className={styles.button}
-            onClick={downLoadFile}
+            onClick={() => downLoadFile(`/files/resume/MedvedkinSergeyFrontendDeveloperCV.pdf`)}
             title="Download resume"
         >{ label } 
             <div className={styles.download}>

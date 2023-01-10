@@ -1,16 +1,16 @@
-import { createRef, useCallback, useEffect, useState } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { Socials } from "../../widgets/Socials";
 import { Tooltip } from "../../widgets/Tooltip";
 import { ContactsForm } from "./ContactsForm";
 import { selectContactMeMessage } from "../../../client/store/homePageSlice";
-import styles from './index.module.scss';
 import { useAppSelector } from "../../../client/store";
+import styles from './index.module.scss';
 
 
 export const Contacts = () => {
     const contactMeMessage = useAppSelector(selectContactMeMessage)
 
-    const tooltipRef = createRef<HTMLDivElement>()
+    const tooltipRef = useRef<HTMLDivElement>(null)
 
     const showTooltip = useCallback(() => {
         tooltipRef.current?.classList.toggle(`visibility`)    
@@ -18,7 +18,7 @@ export const Contacts = () => {
 
     useEffect(() => {
         showTooltip()
-    }, [contactMeMessage, showTooltip])
+    }, [showTooltip, contactMeMessage])
 
     return (
         <section className={styles.contacts}>

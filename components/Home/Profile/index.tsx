@@ -1,9 +1,10 @@
 import React from "react";
-import styles from './index.module.scss';
 import Image from "next/image";
 import { Socials } from "../../widgets/Socials";
+import styles from './index.module.scss';
 
 export const Profile: React.FC = () => {
+    
     return (
         <article className={styles.profile}>
             <header className={styles.header}>

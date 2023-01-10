@@ -5,7 +5,6 @@ import { store } from '../client/store'
 import { AppLayout } from '../components/common/Layout/AppLayout'
 import ErrorBoundary from '../components/shared/ErrorBoundary'
 import { SessionProvider } from 'next-auth/react'
-// include global styles
 import '../styles/globals.css'
 
 function MyApp({ 

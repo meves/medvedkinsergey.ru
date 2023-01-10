@@ -1,36 +1,40 @@
+import React, { createRef, useCallback, useEffect, useMemo } from "react";
 import Link from "next/link";
-import React, { createRef, useEffect } from "react";
-import { Logo } from "../../widgets/Logo";
-import { AppMenu } from "../Menu/AppMenu";
-import { Socials } from "../../widgets/Socials";
-import styles from './index.module.scss';
-import { Icons } from "../../widgets/Icons";
-import { signOut, signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { signOut, signIn, useSession } from "next-auth/react";
+import { AppMenu } from "../Menu/AppMenu";
+import { Logo } from "../../widgets/Logo";
+import { Socials } from "../../widgets/Socials";
+import { Icons } from "../../widgets/Icons";
 import { useAppDispatch, useAppSelector } from "../../../client/store";
 import { auth, selectSessionData } from "../../../client/store/authSlice";
+import styles from './index.module.scss';
 
-const menuItems = [
-    { id: 1, path: '/', title: 'Home' }, 
-    { id: 2, path: '/blog', title: 'Blog'}, 
-    { id: 3, path: '/admin', title: 'Admin'}, 
-    
-]
 
 export const Navbar: React.FC = () => {
     const router = useRouter()
     const { data: session, status } = useSession()
+
     const username = useAppSelector(selectSessionData)?.user?.name
     const dispatch = useAppDispatch()
+    
+    const navRef = createRef<HTMLDivElement>() 
+    
+    const menuItems = useMemo(() => ([
+            { id: 1, path: '/', title: 'Home' }, 
+            { id: 2, path: '/blog', title: 'Blog'}, 
+            { id: 3, path: '/admin', title: 'Admin'}             
+    ]), [])
     
     useEffect(() => {
         dispatch(auth(status, session))
     }, [status, session, dispatch])
     
-    const navRef = createRef<HTMLDivElement>() 
-    const toggleMenuVisibility = () => {
+    
+    const toggleMenuVisibility = useCallback(() => {
         navRef.current?.classList.toggle('visibility')
-    }
+    }, [navRef])
+
     return (
         <div className={styles.navbar}>
             <div className={styles.logo} title="Home">
@@ -39,9 +43,10 @@ export const Navbar: React.FC = () => {
                 </Link>
             </div>
             <nav className={styles.blogMenu} title="My personal blog">
-                {router.asPath !== '/' ? 
-                    <Link href="/"><a>Home</a></Link> : 
-                    <Link href="/blog"><a>Blog</a></Link>}                    
+                { router.asPath !== '/' 
+                    ? <Link href="/"><a>Home</a></Link>
+                    : <Link href="/blog"><a>Blog</a></Link>
+                }                    
             </nav>
             <div  className={styles.socials}> 
                 <Socials width="23" height="23" fill="#000d4b" />
@@ -58,9 +63,13 @@ export const Navbar: React.FC = () => {
                 {session ? (
                     <span 
                         style={{textTransform: 'uppercase'}}
-                        onClick={() => signOut()}>{username}</span>
+                        onClick={() => signOut()}>
+                        { username }
+                    </span>
                 ) : (
-                    <span onClick={() => signIn()}>Sign in</span>
+                    <span onClick={() => signIn()}>
+                        Sign in
+                    </span>
                 )
             }
             </div>

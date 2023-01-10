@@ -1,8 +1,8 @@
-import React from 'react'
-import { useAppDispatch, useAppSelector } from '../../../client/store'
+import React, { useCallback } from 'react'
 import { getClientMessages, selectPaginator } from '../../../client/store/adminPanelSlice'
-import styles from './index.module.scss'
+import { useAppDispatch, useAppSelector } from '../../../client/store'
 import { writeUrl } from '../../../lib/writeUrl'
+import styles from './index.module.scss'
 
 
 export const Paginator = () => {
@@ -29,16 +29,18 @@ export const Paginator = () => {
     
     // get messages for current page
     const dispatch = useAppDispatch()
-    const handleOnPageClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+
+    const handleOnPageClick = useCallback((event: React.MouseEvent<HTMLSpanElement>) => {
         const currentPage = event.currentTarget.textContent
         writeUrl(String(currentPage), String(pageSize))
         dispatch(getClientMessages(Number(currentPage), pageSize))
-    }
+    }, [dispatch, pageSize])
+
     // handle clicks on button 
-    const handleButtonClick = (targetPage: number) => {
+    const handleButtonClick = useCallback((targetPage: number) => {
         writeUrl(String(targetPage), String(pageSize))
         dispatch(getClientMessages(targetPage, pageSize))
-    }
+    }, [dispatch, pageSize])
     
     return (
         <div className={styles.paginator}>
