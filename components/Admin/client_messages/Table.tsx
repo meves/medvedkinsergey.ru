@@ -1,5 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit"
-import { ChangeEvent, useEffect } from "react"
+import { ChangeEvent, FC, useCallback, useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../client/store"
 import { toggleCheckedClientMessage, selectClientMessages, selectPaginator, 
     getClientMessages } from "../../../client/store/adminPanelSlice"
@@ -12,7 +12,7 @@ type Props = {
     setErrorText: (errorText: string) => void
 }
 
-export const Table = (props: Props) => {
+export const Table: FC<Props> = ({ setErrorText }) => {
     const asPath = useRouter().asPath    
     // global state
     let { currentPage, pageSize } = useAppSelector(selectPaginator)
@@ -30,16 +30,16 @@ export const Table = (props: Props) => {
     }, [asPath, currentPage, pageSize, dispatch])
 
     // mark message read / unread
-    const handleToggleChecked = async (event: ChangeEvent<HTMLInputElement>, messageId: number,checked: boolean) => {
+    const handleToggleChecked = useCallback(async (event: ChangeEvent<HTMLInputElement>, messageId: number,checked: boolean) => {
         const checkbox = event.currentTarget
         checkbox.disabled = true
         dispatch(toggleCheckedClientMessage(messageId, !checked))
             .then((data: string | PayloadAction<{messageId: number, checked: boolean}>) => {
                 // if error come
-                if (typeof data === 'string') props.setErrorText(data)
+                if (typeof data === 'string') setErrorText(data)
                 checkbox.disabled = false
             })
-    }
+    }, [dispatch, setErrorText])
 
     return (     
         <table className={styles.table}>
